@@ -1,3 +1,3 @@
 # Telsa-clone
 
-This is a close of the Telsa Website I'm working on 
+This is a clone of the Telsa Website I'm working on 
