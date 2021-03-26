@@ -7,6 +7,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-family: 12px;
   color: #373838;
+  scroll-behavior: auto;
 }
 
 /* Header Section */
@@ -98,7 +99,8 @@ header {
   z-index: 200;
 }
 
-.menu__container-more {
+.menu__container-more,
+.menu__container-mobile {
   position: fixed;
   /* right: 0px; */
   width: 280px;
@@ -116,12 +118,14 @@ header {
 }
 
 .header__models-res1,
-.menu__container-more {
+.menu__container-more,
+.menu__container-mobile {
   display: none;
 }
 
 .menu__container,
-.menu__container-more {
+.menu__container-more,
+.menu__container-mobile {
   justify-content: flex-start;
 }
 .show__menu {
@@ -152,6 +156,14 @@ header .menu__container .menu__name {
   font-weight: 500;
   height: 40px;
   padding-top: 17px;
+  border-bottom: 1px solid #bec2c2;
+}
+
+.menu__container-mobile .menu__name-more {
+  font-size: 12px;
+  font-weight: 500;
+  height: 38px;
+  padding-top: 15px;
   border-bottom: 1px solid #bec2c2;
 }
 
@@ -192,22 +204,10 @@ header .menu__container .menu__name {
   padding-left: 5px;
 }
 
-.menu__container-more a {
+.menu__container-more a,
+.menu__container-mobile a {
   text-decoration: none;
   color: #373838;
-}
-
-@media screen and (max-width: 1200px) {
-  .header__models,
-  .header__menu,
-  .menu__container {
-    display: none;
-  }
-
-  .header__models-res1,
-  .menu__container-more {
-    display: flex;
-  }
 }
 
 /* Main Section */
@@ -290,6 +290,7 @@ header .menu__container .menu__name {
   animation-iteration-count: infinite;
 }
 
+/* Animations */
 @keyframes bounce {
   from {
     transform: translate3d(0, 0, 0);
@@ -316,5 +317,42 @@ header .menu__container .menu__name {
   to {
     -webkit-transform: translate3d(0, 7px, 0);
     transform: translate3d(0, 7px, 0);
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+  .header__models,
+  .header__menu,
+  .menu__container {
+    display: none;
+  }
+
+  .header__models-res1,
+  .menu__container-more {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header__models-res1,
+  .menu__container-more {
+    display: none;
+  }
+
+  .menu__container-mobile {
+    display: flex;
+  }
+  .model__custom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+    width: 100%;
+  }
+  .model__custom .custom,
+  .model__custom .existing {
+    width: 80vw;
   }
 }

@@ -4,11 +4,13 @@ const menuRes1 = document.querySelector('.header__models-res1')
 const moreOptions = document.querySelector('.header__link-more')
 const lessOptions = document.querySelector('.header__links-less')
 const moreMenu = document.querySelector('.menu__container-more')
+const mobileMenu = document.querySelector('.menu__container-mobile')
 
 menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('is-active')
     menu.classList.toggle('show__menu')
     menuRes1.classList.toggle('show__menu')
+    mobileMenu.classList.toggle('show__menu')
 })
 
 moreOptions.addEventListener('click', () => {
